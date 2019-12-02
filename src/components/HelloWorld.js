@@ -118,6 +118,28 @@ function renderGrid() {
     }
 }
 
+class MatrixWord {
+    constructor() {
+        this.activeWordUpdated = _.debounce(() => {
+            window.characterPosition.row = this.startRow;
+            window.characterPosition.index = 0;
+            this.startRow = null;
+            this.drawingRow = false;
+        },1000);
+        this.startRow = null;
+        this.drawingRow = false;
+    }
+    updateWord(row) {
+        if (!this.drawingRow) {
+            this.startRow = row;
+            this.drawingRow = true;
+        }
+        this.activeWordUpdated();
+    }
+}
+
+window.activeWord = new MatrixWord();
+
 class MatrixCharacter {
     constructor(s) {
         this.matrix = _.map(_.compact(s.split("\n")),_.trim);
@@ -157,6 +179,7 @@ class MatrixCharacter {
         window.characterPosition.index += 1;
         this.ticks = this.maxTicks;
         this.animate();
+        activeWord.updateWord(this.row);
     }
 
     get fade() {
