@@ -230,11 +230,92 @@ let mQUESTION = `
     00100
 `;
 
+let m1 = `
+    0110
+    1010
+    0010
+    0010
+    0111
+`;
+
+let m2 = `
+    0110
+    1001
+    0010
+    0100
+    1111
+`;
+
+let m3 = `
+    0110
+    0001
+    0010
+    0001
+    0110
+`;
+
+let m4 = `
+    0011
+    0101
+    0111
+    0001
+    0001
+`;
+
+let m5 = `
+    111
+    100
+    111
+    001
+    111
+`;
+
+let m6 = `
+    111
+    100
+    111
+    101
+    111
+`;
+
+let m7 = `
+    1110
+    0010
+    0100
+    0100
+    0100
+`;
+
+let m8 = `
+    111
+    101
+    111
+    101
+    111
+`;
+
+let m9 = `
+    111
+    101
+    111
+    001
+    001
+`;
+
+let m0 = `
+    111
+    101
+    101
+    101
+    111
+`;
 let alphabet = {
     A: mA, B: mB, C: mC, D: mD, E: mE, F: mF, G: mG, H: mH, 
     I: mI, J: mJ, K: mK, L: mL, M: mM, N: mN, O: mO, P: mP, 
     Q: mQ, R: mR, S: mS, T: mT, U: mU, V: mV, W: mW, X: mX, 
-    Y: mY, Z: mZ, " ": mSPACE, "!": mEXPLANATION, "?": mQUESTION
+    Y: mY, Z: mZ, " ": mSPACE, "!": mEXPLANATION, "?": mQUESTION,
+    1: m1, 2: m2, 3: m3, 4: m4, 5: m5, 6: m6, 7: m7, 8: m8, 9: m9,
+    0: m0
 };
 
 export default alphabet;
